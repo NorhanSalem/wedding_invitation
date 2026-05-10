@@ -3,7 +3,12 @@
 import { motion } from "framer-motion";
 import { easings, timings } from "@/app/lib/animations";
 
-export function Hero() {
+type HeroProps = {
+  /** Fired when the hero video is buffered enough to play (or on error). */
+  onVideoReady?: () => void;
+};
+
+export function Hero({ onVideoReady }: HeroProps) {
   return (
     <section className="relative min-h-dvh w-full overflow-hidden bg-black">
        <motion.div
@@ -28,8 +33,10 @@ export function Hero() {
         muted
         loop={false}
         playsInline
-        preload="none"
+        preload="auto"
         src="/hero-watermark.mp4"
+        onCanPlay={onVideoReady}
+        onError={onVideoReady}
       />
      <div className="absolute inset-0 z-10 bg-gray-800/40">
 
@@ -45,7 +52,7 @@ export function Hero() {
           ease: easings.lightning,
         }}
       >
-        بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ
+        بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ
       </motion.p>
       <motion.p
         dir="ltr"
@@ -112,21 +119,6 @@ export function Hero() {
       >
         17 July 2026
       </motion.p>
-      {/* <motion.p
-        dir="ltr"
-        className="amiri-regular font-extralight shadow-lg  absolute text-center text-[16px] tracking-widest top-[57%] left-1/2 z-10 w-full -translate-x-1/2 -translate-y-1/2 text-white"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          delay: 4.5,
-          duration: timings.heroLine * 3,
-          ease: easings.lightning,
-        }}
-      >
-        فى الدنيا والآخرة
-      </motion.p> */}
-      
-
     </section>
   );
 }
