@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f1410;
+  --foreground: #f5f2ea;
+  /* Wedding invitation palette — tweak here to restyle globally */
+  --green-deep: #4a5a42;
+  --green-soft: #7d8461;
+  --green-shadow: #2d3528;
+  --gold: #c5a059;
+  --gold-bright: #e4c77a;
+  --ivory: #f5f2ea;
+  --navy-sky: #1a2332;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-green-deep: var(--green-deep);
+  --color-green-soft: var(--green-soft);
+  --color-gold: var(--gold);
+  --color-ivory: var(--ivory);
+}
+
+.font-invite-serif {
+  font-family: var(--font-serif), ui-serif, Georgia, "Times New Roman", serif;
+}
+
+.font-invite-arabic {
+  font-family: var(--font-arabic), serif;
+}
+
+.amiri-regular {
+  font-family: var(--font-arabic), "Amiri", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.amiri-bold {
+  font-family: var(--font-arabic), "Amiri", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.amiri-regular-italic {
+  font-family: var(--font-arabic), "Amiri", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.amiri-bold-italic {
+  font-family: var(--font-arabic), "Amiri", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.cormorant-unicase-light {
+  font-family: var(--font-cormorant-unicase), "Cormorant Unicase", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.cormorant-unicase-regular {
+  font-family: var(--font-cormorant-unicase), "Cormorant Unicase", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cormorant-unicase-medium {
+  font-family: var(--font-cormorant-unicase), "Cormorant Unicase", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.cormorant-unicase-semibold {
+  font-family: var(--font-cormorant-unicase), "Cormorant Unicase", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.cormorant-unicase-bold {
+  font-family: var(--font-cormorant-unicase), "Cormorant Unicase", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.mea-culpa-regular {
+  font-family: var(--font-mea-culpa), "Mea Culpa", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ballet-regular {
+  font-family: var(--font-ballet), "Ballet", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bodoni-moda-regular {
+  font-family: var(--font-bodoni-moda), "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bodoni-moda-extralight {
+  font-family: var(--font-bodoni-moda), "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+/* Arabic blocks: use with class + dir="rtl" on wrapper */
+[dir="rtl"] {
+  font-family: var(--font-arabic), serif;
+}
